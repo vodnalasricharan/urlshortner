@@ -18,7 +18,7 @@ def createurl(request):
             shorturl=urlshort.objects.get(url=data['url'])
             serializer=urlshorserializer(shorturl)
             return Response(serializer.data)
-        except urlshort.DoesNotExist:
+        except:
             slug = ''.join(random.choice(string.ascii_letters)
                            for x in range(10))
             data2=dict()
